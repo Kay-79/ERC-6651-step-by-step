@@ -33,8 +33,8 @@ npx hardhat run --network bsctest scripts/deploy.js
 #### Result:
 
 -   ERC721: https://testnet.bscscan.com/token/0xC33842Ec4d6981E305cd68b2562843C3308E3F24
--   ERC6551Account: https://testnet.bscscan.com/token/0x233a7A15733b2331f2bE5a0FB97b7ED329941CAA
--   ERC6551Registry: https://testnet.bscscan.com/token/0xE643f90393749F4dBa4eCf2BD0BC17047AC1d513
+-   ERC6551Account: https://testnet.bscscan.com/address/0x233a7A15733b2331f2bE5a0FB97b7ED329941CAA
+-   ERC6551Registry: https://testnet.bscscan.com/address/0xE643f90393749F4dBa4eCf2BD0BC17047AC1d513
 
 ### Step 2: Mint Token and Create Token Bound Account
 
