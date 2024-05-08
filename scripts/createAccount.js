@@ -6,7 +6,7 @@ async function main() {
     const registry = await Registry.attach(process.env.ERC6551REGISTRY_ADDRESS);
     //update salt for a more secure hash
     const salt = 0;
-    const implementation = process.env.ERC6551ACOUNT_ADDRESS;
+    const implementation = process.env.ERC6551ACCOUNT_ADDRESS;
     const tokenAddress = process.env.NFT_ADDRESS;
     //replace with tokenId your minted in scripts/mint.js, logged on the CLI
     const tokenId = 0;
@@ -31,14 +31,7 @@ async function main() {
     // );
     run("verify:verify", {
         address: "0x9a320167d6B60E6Ce739C79a6B36246b2233558f",
-        constructorArguments: [
-            implementation,
-            chainID,
-            tokenAddress,
-            tokenId,
-            salt,
-            initData,
-        ],
+        constructorArguments: [],
     });
     // if (receipt.status == 1 && address) {
     //     console.log("Account created successfully at address: ", address);

@@ -61,3 +61,7 @@ npx hardhat run --network bsctest scripts/createAccount.js
 ```bash
 npx hardhat run --network bsctest scripts/interactAccount.js
 ```
+
+#### Result:
+
+-   Transaction hash: https://testnet.bscscan.com/tx/0x8e8c4feabaaccd3d5bccd27702c726388620673a2e6d66ee3b4301057ad905f8
