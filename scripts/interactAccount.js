@@ -9,7 +9,7 @@ async function main() {
     );
     const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
     //insert your TBA address here from scripts/createAccount.js
-    const tokenBoundAccount = "0xB123036E3d67edCa297a6fa9f096B645F4402Af5";
+    const tokenBoundAccount = process.env.TBA_ADDRESS;
     const tba = new ethers.Contract(tokenBoundAccount, artifact.abi, signer);
 
     //Localhost implementation (hardhat node)

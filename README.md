@@ -12,6 +12,11 @@ Use npm to install the project's dependencies:
 
 ```bash
 npm install
+```
+
+Choose Solidity compiler version 0.8.20
+
+```bash
 npx hardhat compile
 ```
 
@@ -41,4 +46,18 @@ npx hardhat run --network bsctest scripts/mint.js
 
 -   Minted Token: https://testnet.bscscan.com/tx/0x2840cabbc2696317e7391b1c1cf1c6e64b19deb20eba07c81db76662305ae2ed
 
-### Step 3: Transfer Token to Token Bound Account
+### Step 3: Create Token Bound Account - TBA (ERC-6551)
+
+```bash
+npx hardhat run --network bsctest scripts/createAccount.js
+```
+
+#### Result:
+
+-   TBA: https://testnet.bscscan.com/address/0x9a320167d6B60E6Ce739C79a6B36246b2233558f
+
+### Step 4: Interact with Token Bound Account
+
+```bash
+npx hardhat run --network bsctest scripts/interactAccount.js
+```
