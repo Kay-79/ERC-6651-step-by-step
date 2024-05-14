@@ -5,29 +5,30 @@ async function main() {
     const Registry = await ethers.getContractFactory("ERC6551Registry");
     const registry = await Registry.attach(process.env.ERC6551REGISTRY_ADDRESS);
     //update salt for a more secure hash
-    const salt = 0;
+    const salt = "0x9999000000000000000000000000000000000000000000000000000000000001";
     const implementation = process.env.ERC6551ACCOUNT_ADDRESS;
     const tokenAddress = process.env.NFT_ADDRESS;
     //replace with tokenId your minted in scripts/mint.js, logged on the CLI
-    const tokenId = 0;
-    const chainID = 97; //bsc testnet
+    const tokenId = 1;
+    const chainID = 11155111; //bsc testnet
     const initData = "0x";
 
     const tx = await registry.createAccount(
         implementation,
+        salt,
         chainID,
         tokenAddress,
-        tokenId,
-        salt,
-        initData
+        tokenId
+        // initData
     );
     const receipt = await tx.wait();
     const address = await registry.account(
         implementation,
+        salt,
         chainID,
         tokenAddress,
-        tokenId,
-        salt
+        tokenId
+        // initData
     );
     if (receipt.status == 1 && address) {
         console.log("Account created successfully at address: ", address);
@@ -36,11 +37,11 @@ async function main() {
             address: address,
             constructorArguments: [
                 implementation,
+                salt,
                 chainID,
                 tokenAddress,
                 tokenId,
-                salt,
-                initData,
+                // initData
             ],
         });
     } else {
