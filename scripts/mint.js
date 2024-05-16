@@ -16,7 +16,7 @@ async function main() {
 
     // Log the transaction details
     console.log("Transaction hash:", receipt.hash);
-    console.log(`Link: ${process.env.BSC_TEST_EXPLORER}/tx/${receipt.transactionHash}`);
+    console.log(`Link: ${process.env.DOS_TEST_EXPLORER}/tx/${receipt.transactionHash}`);
     console.log("Gas used:", receipt.cumulativeGasUsed);
 
     // Check if the transaction was successful (status 1)
