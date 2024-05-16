@@ -1,14 +1,14 @@
 require("hardhat");
 
 async function main() {
-    console.log("Deploying contract ERC-721");
-    const NFT = await ethers.deployContract("NFT");
-    const nft = await NFT.waitForDeployment();
-    console.log("Verifying NFT contract on BSC Testnet");
-    run("verify:verify", {
-        address: nft.target,
-        constructorArguments: [],
-    });
+    // console.log("Deploying contract ERC-721");
+    // const NFT = await ethers.deployContract("NFT");
+    // const nft = await NFT.waitForDeployment();
+    // console.log("Verifying NFT contract on BSC Testnet");
+    // run("verify:verify", {
+    //     address: nft.target,
+    //     constructorArguments: [],
+    // });
 
     // console.log("Deploying contract ERC-6551 Account");
     // const Account = await ethers.deployContract("ERC6551Account");
@@ -19,14 +19,14 @@ async function main() {
     //     constructorArguments: [],
     // });
 
-    // console.log("Deploying contract ERC-6551 Registry");
-    // const Registry = await ethers.deployContract("ERC6551Registry");
-    // const registry = await Registry.waitForDeployment();
-    // console.log("Verifying Registry contract on BSC Testnet");
-    // run("verify:verify", {
-    //     address: registry.target,
-    //     constructorArguments: [],
-    // });
+    console.log("Deploying contract ERC-6551 Registry");
+    const Registry = await ethers.deployContract("ERC6551Registry");
+    const registry = await Registry.waitForDeployment();
+    console.log("Verifying Registry contract on BSC Testnet");
+    run("verify:verify", {
+        address: registry.target,
+        constructorArguments: [],
+    });
 
     console.log("NFT contract deployed at:", nft.target);
     // console.log("Account contract deployed at:", account.target);
